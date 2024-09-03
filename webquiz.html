@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Quiz</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .quiz-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 600px;
+            text-align: left; /* Align questions to the left */
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center; /* Center align the result */
+        }
+
+        #input-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center; /* Center align the input container */
+        }
+
+        #input-container input {
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Certificate styling */
+.certificate {
+    width: 70%;
+    max-width: 800px;
+    height: 600px;
+    padding: 40px;
+    border: 2px solid orange;
+    border-radius: 20px;
+    position: relative;
+    background-size: cover; /* Ensure the image covers the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    display: none; /* Hide certificate initially */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+
+        .curve {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, orange, gold);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .top-left { top: -100px; left: -100px; }
+        .top-right { top: -100px; right: -100px; }
+        .bottom-left { bottom: -100px; left: -100px; }
+        .bottom-right { bottom: -100px; right: -100px; }
+
+        .header h1 { font-size: 2.5em; color: #333; font-weight: bold; }
+        .certificate-text { font-size: 1.2em; color: #333; }
+        .content h2 { font-size: 2.5em; margin: 20px 0; color: orange; font-weight: bold; font-family: 'Courier New', Courier, monospace; }
+        .quiz { font-weight: bold; font-size: 1.5em; }
+        .footer-text, .provider, .date { color: #333; }
+        .certificateid { color: black; /* Change text color to black */ font-size: 1em; /* Adjust font size as needed */ }
+    </style>
+</head>
+<body>
+    <h1>Web DEVELOPMENT QUIZ</h1>
+
+    <div class="quiz-container" id="quiz-container">
+        <div id="quiz">
+                <div class="question">
+                <p>1. What does HTML stand for?</p>
+                <label><input type="radio" name="q1" value="correct"> Hyper Text Markup Language</label><br>
+                <label><input type="radio" name="q1" value="incorrect"> High Text Markup Language</label><br>
+                <label><input type="radio" name="q1" value="incorrect"> Hyperlink Markup Language</label><br>
+            </div>
+            <div class="question">
+                <p>2. What does CSS stand for?</p>
+                <label><input type="radio" name="q2" value="correct"> Cascading Style Sheets</label><br>
+                <label><input type="radio" name="q2" value="incorrect"> Creative Style Sheets</label><br>
+                <label><input type="radio" name="q2" value="incorrect"> Computer Style Sheets</label><br>
+            </div>
+            <!--Question 3-->
+            <div class="question">
+                <p>3. Which language is used for styling web pages?</p>
+                <label><input type="radio" name="q3" value="wrong">HTML</label><br>
+                <label><input type="radio" name="q3" value="correct">CSS</label><br>
+                <label><input type="radio" name="q3" value="wrong">JavaScript</label><br>
+            </div>
+            <!--Question 4-->
+            <div class="question">
+                <p>4. Which language is used for web apps?</p>
+                <label><input type="radio" name="q4" value="correct">JavaScript</label><br>
+                <label><input type="radio" name="q4" value="wrong">Python</label><br>
+                <label><input type="radio" name="q4" value="wrong">PHP</label><br>
+            </div>
+             <!--Question 5-->
+            <div class="quiz-section">
+                <h2>Question 5:</h2>
+                <p>What does CSS stand for?</p>
+                <label><input type="radio" name="q5" value="correct">Cascading Style Sheet </label>
+                <label><input type="radio" name="q5" value="wrong">Colorful Style Sheet </label>
+                <label><input type="radio" name="q5" value="wrong">Computer Style Sheet</label>
+            </div>
+            <!--Question 6-->
+            <div class="quiz-section">
+                <h2>Question 6:</h2>
+                <p>Which HTML element is used to define the title of a document?</p>
+                <label><input type="radio" name="q6" value="correct">&lt;title&gt;</label>
+                <label><input type="radio" name="q6" value="wrong">&lt;head&gt;</label>
+                <label><input type="radio" name="q6" value="wrong">&lt;meta&gt;</label>
+            </div>
+            <!--Question 7-->
+            <div class="quiz-section">
+                <h2>Question 7:</h2>
+                <p>Which HTML element is used for the largest heading?</p>
+                <label><input type="radio" name="q7" value="wrong">&lt;header&gt;</label>
+                <label><input type="radio" name="q7" value="wrong">&lt;h6&gt;</label>
+                <label><input type="radio" name="q7" value="correct">&lt;h1&gt;</label>
+            </div>
+            <!--Question 8-->
+            <div class="quiz-section">
+                <h2>Question 8:</h2>
+                <p>What is the correct HTML element for inserting a line break?</p>
+                <label><input type="radio" name="q8" value="wrong">&lt;lb&gt;</label>
+                <label><input type="radio" name="q8" value="correct">&lt;br&gt;</label>
+                <label><input type="radio" name="q8" value="wrong">&lt;break&gt;</label>
+            </div>
+             <!--Question 9-->
+             <div class="quiz-section">
+                <h2>Question 9:</h2>
+                <p>Which HTML attribute is used to define inline styles?</p>
+                <label><input type="radio" name="q9" value="wrong">styles</label>
+                <label><input type="radio" name="q9" value="correct">style</label>
+                <label><input type="radio" name="q9" value="wrong">class</label>
+            </div>
+            <!--Question 10-->
+            <div class="quiz-section">
+                <h2>Question 10:</h2>
+                <p>Which CSS property controls the text size?</p>
+                <label><input type="radio" name="q10" value="wrong">text-style</label>
+                <label><input type="radio" name="q10" value="correct">font-size</label>
+                <label><input type="radio" name="q10" value="wrong">text-size</label>
+            </div>
+            <!--Question 11-->
+            <div class="quiz-section">
+                <h2>Question 11:</h2>
+                <p>Inside which HTML element do we put the JavaScript?</p>
+                <label><input type="radio" name="q11" value="correct">&lt;script&gt;</label>
+                <label><input type="radio" name="q11" value="wrong">&lt;js&gt;</label>
+                <label><input type="radio" name="q11"value="wrong">&lt;javascript&gt;</label>
+            </div>
+            <!-- Question 12 -->
+            <div class="quiz-question">
+                <h2>Question 12:</h2>
+                <p>Which JavaScript method is used to write HTML content into a web page?</p>
+                <label><input type="radio" name="q12" value="correct">document.write()</label>
+                <label><input type="radio" name="q12" value="wrong">document.create()</label>
+                <label><input type="radio" name="q12" value="wrong">document.html()</label>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="quiz-question">
+                <h2>Question 13:</h2>
+                <p>What does the "alt" attribute in HTML provide for an image?</p>
+                <label><input type="radio" name="q13" value="correct">Alternative text for the image</label>
+                <label><input type="radio" name="q13" value="wrong">Alternative source for the image</label>
+                <label><input type="radio" name="q13" value="wrong">Image caption</label>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="quiz-question">
+                <h2>Question 14:</h2>
+                <p>Which property is used in CSS to change the background color?</p>
+                <label><input type="radio" name="q14" value="correct">background-color</label>
+                <label><input type="radio" name="q14" value="wrong">color</label>
+                <label><input type="radio" name="q14" value="wrong">bgcolor</label>
+          </div>
+           <!-- Question 15 -->
+            <div class="quiz-question">
+                <h2>Question 15:</h2>
+                <p>What is the correct way to link an external CSS file in HTML?</p>
+                <label><input type="radio" name="q15" value="correct">&lt;link rel="stylesheet" href="style.css"&gt;</label>
+                <label><input type="radio" name="q15" value="wrong">&lt;stylesheet&gt;style.css&lt;/stylesheet&gt;</label>
+                <label><input type="radio" name="q15" value="wrong">&lt;css&gt;style.css&lt;/css&gt;</label>
+            </div>
+            <!-- Add more questions as needed -->
+            <!-- Your quiz questions here -->
+
+        </div>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+        <div id="result"></div>
+    </div>
+
+    <div id="input-container">
+        <h2>Congratulations! Please enter your details for the certificate:</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your name"><br>
+        <label for="date">Date:</label>
+        <input type="text" id="date" placeholder="Date (e.g., August 24, 2024)"><br>
+        <button onclick="generateCertificate()">Generate Certificate</button>
+    </div>
+
+    <div class="certificate" id="certificate-container">
+        <img src="https://i.imghippo.com/files/eOTDn1724409401.webp" alt="Logo" class="logo">
+        <div class="curve top-left"></div>
+        <div class="curve top-right"></div>
+        <div class="curve bottom-left"></div>
+        <div class="curve bottom-right"></div>
+        <div class="header">
+            <h1>Certificate of Achievement</h1>
+        </div>
+        <div class="content">
+            <p class="certificate-text">This is to certify that</p>
+            <h2 class="name" id="cert-name">[Name]</h2>
+            <p class="certificate-text">has successfully passed the Beginner Web Development Quiz</p>
+        </div>
+        <div class="footer">
+            <p class="footer-text">provided by</p>
+            <p class="provider">MD SHAREK32.COM</p>
+            <p class="date" id="cert-date">[Date]</p>
+            <p class="certificateid" id="cert-id">Certificate Id: 167430852</p>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const totalQuestions = 15; // Update this to the number of quiz questions
+            let score = 0;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const answer = document.querySelector('input[name="q' + i + '"]:checked');
+                if (answer && answer.value === 'correct') {
+                    score++;
+                }
+            }
+
+            const result = document.getElementById('result');
+            const passingScore = 0.8 * totalQuestions;
+
+            if (score >= passingScore) {
+                result.textContent = `You passed with a score of ${score} out of ${totalQuestions}!`;
+                document.getElementById('quiz-container').style.display = 'none';
+                document.getElementById('input-container').style.display = 'block';
+            } else {
+                result.textContent = `You scored ${score} out of ${totalQuestions}. Please try again.`;
+            }
+        }
+
+        function generateRandomID() {
+            return Math.floor(Math.random() * 1000000000); // Generate a random number
+        }
+
+        function generateCertificate() {
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+
+            if (name && date) {
+                document.getElementById('cert-name').textContent = name;
+                document.getElementById('cert-date').textContent = date;
+
+                // Generate and set a random Certificate ID
+                const certId = generateRandomID();
+                document.getElementById('cert-id').textContent = `Certificate Id: ${certId}`;
+
+                document.getElementById('input-container').style.display = 'none';
+                document.getElementById('certificate-container').style.display = 'flex';
+            } else {
+                alert('Please enter both your name and the date.');
+            }
+        }
+    </script>
+</body>
+</html>
